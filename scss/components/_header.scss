@@ -1,0 +1,45 @@
+.header-nav{
+    height: 10vh;
+    width: 100%;
+    background-color: lightblue;
+   
+.menu-primary-container{
+    display: flex;
+    align-items: center;
+    padding-inline: 50px;
+    height: 100%;
+}
+    .menu{
+        display: flex;
+        list-style-type: none;
+         > li{
+            margin-inline-end: 20px;
+            position: relative;
+            padding-block: 10px;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .sub-menu{
+                max-height: 0;
+                overflow: hidden;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                transform: translateY(100%);
+                list-style-type: none;
+            }
+            &:hover{
+                .sub-menu{
+                    max-height: 300px;
+                    overflow: scroll;
+                    padding-block: 10px;
+                    background-color: white;
+                    padding-inline: 20px;
+                }
+            }
+        }
+    }
+
+    
+}
