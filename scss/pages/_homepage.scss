@@ -1,0 +1,101 @@
+.homepage{
+
+    &__hero{
+        display: flex;
+        justify-content: space-between;
+        background-color: $cyan;
+        border-radius: 20px;
+        margin-top: 30px;
+        height: 500px;
+        overflow: hidden;
+        box-shadow: 5px 5px 10px rgba($color: #0000008b, $alpha: 0.1);
+        margin-bottom: 100px;
+        .hero-content{
+            padding: 50px 30px;
+        }
+
+        .hero-image{
+            width: 50%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__categories{
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        margin-bottom: 100px;
+        .category-card{
+            width: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            align-items: center;
+            gap: 50px;
+            .image{
+                width: 100px;
+                height: 100px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .title{
+                text-align: center;
+                font-size: 16px;
+                font-weight: 300;
+                color: $text;
+            }
+        }
+    }
+
+    &__recipes{
+       
+        margin-bottom: 100px;
+        .title{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .recipes-wrapper{
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        .recipe-card{
+            width: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            align-items: center;
+            gap: 50px;
+            overflow: hidden;
+             box-shadow: 2px 2px 10px rgba($color: #3837378b, $alpha: 0.1);
+
+            .recipe-image{
+                width: 100%;
+                height: 70%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .recipe-title{
+                text-align: center;
+                font-size: 16px;
+                font-weight: 300;
+                color: $text;
+            }
+        }
+    }
+}

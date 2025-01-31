@@ -1,0 +1,13 @@
+.page{
+
+    padding-inline: 240px;
+
+
+    @media only screen and (max-width: 1700px) {
+        padding-inline: 60px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        padding-inline: 20px;
+    }
+}
