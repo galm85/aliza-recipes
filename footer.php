@@ -11,13 +11,8 @@
 
 ?>
 
-<footer>
- 
-
-
-    <div class="copyrights">
-        <p>Aliza Recipes &copy; <?php echo date('Y'); ?></p>
-    </div>
+<footer class="footer">
+    <p>Aliza Recipes &copy; <?php echo date('Y'); ?></p>
 </footer>
 
 

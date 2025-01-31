@@ -24,28 +24,26 @@ $category = get_term_by('slug', $slug, 'recipe_category');
 $recipes = get_posts($args);
 
 
-echo "<pre>";
-echo $slug;
-print_r($category);
-print_r($recipes);
-
 
  ?>
-<div class="page">
-    <h1><?=$category->name?></h1>
-    <h3>recipes</h3>
+<div class="page recipe-category-page">
+    <h1 class="recipe-category-page__title"><?=$category->name?></h1>
+   
+    <section class="recipe-category-page__wrapper">
     <?php if($recipes): ?>
         <?php foreach($recipes as $recipe):?>
             <a href="<?=get_permalink($recipe->ID)?>" class="recipe-card">
-                <h3><?=$recipe->post_title?></h3>
+                
                 <?php if (has_post_thumbnail($recipe->ID)): ?>
                 <div class="recipe-image">
                     <?php echo get_the_post_thumbnail($recipe->ID, 'medium'); ?>
                 </div>
             <?php endif; ?>
+            <h3 class="card-title"><?=$recipe->post_title?></h3>
             </a>
         <?php endforeach;?>
     <?php endif; ?>
+    </section>
 </div>
 
 

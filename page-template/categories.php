@@ -37,7 +37,7 @@ $categories = get_terms([
                 
             ?>
                 <!-- Category card -->  
-                    <a class="category-card" href="<?php echo home_url().'/'. $slug ?>" >
+                    <a class="category-card" href="<?php echo home_url().'/categories/'. $slug ?>" >
                         <div class="card-image">
                         <img src="<?=$image['url']?>" alt=""/>
  

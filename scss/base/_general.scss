@@ -1,7 +1,7 @@
 .page{
 
     padding-inline: 240px;
-
+    min-height: 80vh;
 
     @media only screen and (max-width: 1700px) {
         padding-inline: 60px;
@@ -10,4 +10,12 @@
     @media only screen and (max-width: 768px) {
         padding-inline: 20px;
     }
+}
+
+.back-button{
+    background: none;
+    border: 1px solid $text;
+    color: $text;
+    padding: 5px 10px;
+    border-radius: 16px;
 }
