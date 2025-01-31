@@ -23,6 +23,7 @@ $categories = get_terms([
     <div class="page">
 
         <h1><?=$main_title?></h1>
+        <img src="<?=get_template_directory_uri()?>/assets/images/banner.png" />
         <section class="categories-container">
         <!-- <?= '<pre>'
         ?>

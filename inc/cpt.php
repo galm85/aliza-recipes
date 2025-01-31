@@ -29,7 +29,7 @@ $args = [
     'exclude_from_search'   => true,
     'publicly_queryable' => true,
     'capability_type'       => 'post',
-    'rewrite' => array('slug' => 'מתכונים'),
+    'rewrite' => array('slug' => 'recipes'),
 
 
 ];
@@ -41,8 +41,8 @@ function add_taxonomies() {
 
     // categories
     $labels = array(
-        'name'                       => 'קטגוריות מתכונים',
-        'singular_name'              => 'קטגוריה',
+        'name'                       => 'categories',
+        'singular_name'              => 'category',
         'menu_name'                  => 'קטגוריות',
         'all_items'                  => 'כל הקטגוריות',
         'edit_item'                  => 'עריכת קטגוריה',
