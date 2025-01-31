@@ -10,7 +10,6 @@
 
 
  $id = get_the_ID();
-$main_title = get_field('main_title',$id);
 
 $categories = get_terms([
     'taxonomy' => 'recipe_category',
@@ -20,10 +19,10 @@ $categories = get_terms([
 
 <?php get_header()?>
 
-    <div class="page">
+    <div class="page categories-page">
 
-        <h1>המתכונים של עליזה</h1>
-        <section class="categories-container">
+        <h1 class="categories-page__title">המתכונים של עליזה</h1>
+        <section class="categories-page__wrapper">
       
        <?php if (!empty($categories)): ?>
             <?php foreach ($categories as $category):
@@ -39,12 +38,11 @@ $categories = get_terms([
             ?>
                 <!-- Category card -->  
                     <a class="category-card" href="<?php echo home_url().'/'. $slug ?>" >
-                        <div class="category-card__image">
-                        <!-- <?php print_r($image)?> -->
+                        <div class="card-image">
                         <img src="<?=$image['url']?>" alt=""/>
  
                         </div>
-                        <h4 class="category-card__title"><?php echo $title ?></h4>
+                        <h4 class="card-title"><?php echo $title ?></h4>
                     </a>
                 <!-- /Category card -->
             <?php endforeach; ?>
