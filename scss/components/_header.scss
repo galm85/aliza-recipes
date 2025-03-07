@@ -1,12 +1,17 @@
-.header-nav{
+.aliza-header{
+    display: flex;
     height: 10vh;
+}
+
+
+.header-nav{
+    height: 100%;
     width: 100%;
     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
    
 .menu-primary-container{
     display: flex;
     align-items: center;
-    padding-inline: 50px;
     height: 100%;
 }
     .menu{
@@ -18,8 +23,9 @@
             padding-block: 10px;
             a{
                 text-decoration: none;
-                color: black;
+                color: $text;
                 font-family: $main_font;
+                font-weight: 400;
             }
             .sub-menu{
                 max-height: 0;
@@ -29,18 +35,46 @@
                 right: 0;
                 transform: translateY(100%);
                 list-style-type: none;
+                z-index: 10;
+                li.menu-item{
+                    width: 100%;
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
             }
             &:hover{
                 .sub-menu{
                     max-height: 300px;
                     overflow: scroll;
                     padding-block: 10px;
-                    background-color: white;
-                    padding-inline: 20px;
+                    background-color: #fdf4ed;
+                    min-width: 250px;
+                    box-shadow: 1px 1px 5px lightgrey;
+                    border-radius: 2px;
+                    li.menu-item{
+                        font-size: 16px;
+                        font-weight: 300;
+                        margin-bottom: 15px;
+                        padding-inline: 20px;
+                        padding-block: 10px;
+
+                        &:hover{
+                            background-color: $background;
+                        }
+                    }
                 }
             }
         }
     }
 
     
+}
+
+.header-logo{
+    padding-block: 10px;
+    height: 100%;
+    border-radius: 50%;
 }

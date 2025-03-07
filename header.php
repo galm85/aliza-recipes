@@ -22,9 +22,11 @@
 <body <?php body_class()?> >
     <?php wp_body_open()?>
 
-    <header>
+    <header class="aliza-header">
         <nav class="header-nav">
             <?php wp_nav_menu(['theme_location'=>'primary']) ?>
         </nav>
+        <img class="header-logo" src="<?= get_template_directory_uri(); ?>/assets/images/aliza_logo.png" alt="Icon">
+
     </header>
             

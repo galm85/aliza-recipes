@@ -1,67 +1,141 @@
 .comments-section{
 
-    padding-inline: 100px;
     padding-block: 50px;
-    background-color: rgba($color: lightgray, $alpha: 0.2);
-    border-radius: 10px;
     margin-block: 50px;
+    border-top: 1px solid $text;
 
-.comments-list{
-     list-style-type: none;
-    margin-bottom: 50px;
-    padding-top: 20px;
-    margin-top: 100px;
-    .single-comment{
-       
-        padding: 10px 20px;
-        .comment-author{
-            font-weight: 700;
-        }
-
-        .comment-content{
-            margin-top: 10px;
-            
-        }
-    }
-}
-
-.comment-form{
-
-    .comment-form-author{
+    .comments-list{
+        list-style-type: none;
+        margin-bottom: 50px;
+        padding-top: 20px;
+        margin-top: 20px;
         display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-        input{
-            width: 300px;
-            padding: 10px 20px;
-            border-radius: 6px;
+        flex-direction: column-reverse;
+        h2{
+            display: none;
         }
-    }
-
-    .comment-form-comment{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-        textarea{
-            width: 600px;
+        .single-comment{
+            color: $text;
             padding: 10px 20px;
-            border-radius: 6px;
-        }
-    }
+            width: 400px;
+            border-bottom:1px solid rgba($color: $text, $alpha: 0.3);
+            .comment-author{
+                font-weight: 700;
+            }
 
-    .form-submit{
-        .submit{
-            border-radius: 10px;
-            padding: 10px 30px;
-            font-size: 20px;
-            font-weight: 300;
-            background-color: transparent;
-            cursor: pointer;
-            transition: all ease-in-out 0.2s;
-            &:hover{
-                background-color: $cyan;
+            .comment-content{
+                margin-top: 10px;
+                
             }
         }
     }
-}
+
+    .comment-form{
+        border-bottom: 1px solid rgba($color: $text, $alpha: 0.3);
+        padding-bottom: 50px;
+        h3{
+            color: $text;
+            font-weight: 700;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .comment-form-author{
+            display: flex;
+            flex-direction: column;
+            margin-block: 20px;
+            label{
+                color: $text;
+                font-size: 16px;
+                font-weight: 300;
+            }
+            input{
+                width: 300px;
+                padding: 10px 20px;
+                border:none;
+                color: $text;
+                background:none;
+                border-bottom: 1px solid $text;
+
+                &:focus{
+                    outline: none;
+
+                }
+            }
+        }
+
+        .comment-form-comment{
+            display: flex;
+            flex-direction: column;
+            margin-block: 40px;
+            label{
+                color: $text;
+                font-size: 16px;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+            textarea{
+                width: 600px;
+                padding: 10px 20px;
+                border-radius: 2px;
+                border: 1px solid $text;
+                background-color: rgba($color: $background, $alpha: 0.1);
+            }
+        }
+
+        .form-submit{
+            .submit{
+                border-radius: 10px;
+                padding: 10px 30px;
+                font-size: 20px;
+                font-weight: 300;
+                border: 1px solid $text;
+                background-color: transparent;
+                color: $text;
+                cursor: pointer;
+                transition: all ease-in-out 0.2s;
+                &:hover{
+                    background-color: $text;
+                    color: $background;
+                }
+            }
+        }
+    }
+
+
+    @media screen and (max-width:768px){
+        .comment-form{
+     
+            .comment-form-comment{
+
+                textarea{
+                    width: 100%;
+                }
+            }
+        }
+
+        .comments-list{
+            list-style-type: none;
+            margin-bottom: 50px;
+            padding-top: 20px;
+            margin-top: 20px;
+            h2{
+                display: none;
+            }
+            .single-comment{
+                color: $text;
+                padding: 10px 20px;
+                width: 100%;
+                border-bottom:1px solid rgba($color: $text, $alpha: 0.3);
+                .comment-author{
+                    font-weight: 700;
+                }
+    
+                .comment-content{
+                    margin-top: 10px;
+                    
+                }
+            }
+        }
+    }
 }

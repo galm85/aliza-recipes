@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="page single-recipe">
+<div class="aliza-page single-recipe">
     <?php
     if (have_posts()) :
         while (have_posts()) : the_post(); 
@@ -25,14 +25,15 @@
                 <?php endif; ?>
             </div>
         </section>
+
         <button onclick="window.history.back()" class="back-button"> חזרה</button>
 
         <section class="comments">
         <?php 
-    if (comments_open() || get_comments_number()) :
-        comments_template();  // This will load the comments template (comments.php)
-    endif;
-    ?>
+            if (comments_open() || get_comments_number()) :
+                comments_template();  // This will load the comments template (comments.php)
+            endif;
+            ?>
         </section>
 
         

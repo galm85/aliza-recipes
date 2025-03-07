@@ -26,9 +26,8 @@ $recipes = get_posts($args);
 
 
  ?>
-<div class="page recipe-category-page">
+<div class="aliza-page recipe-category-page">
     <h1 class="recipe-category-page__title"><?=$category->name?></h1>
-   
     <section class="recipe-category-page__wrapper">
     <?php if($recipes): ?>
         <?php foreach($recipes as $recipe):?>

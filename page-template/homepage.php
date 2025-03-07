@@ -11,6 +11,7 @@
 
  $id = get_the_ID();
 $main_title = get_field('main_title',$id);
+$main_text = get_field('homepage_text',$id);
 
 $categories = get_terms([
     'taxonomy' => 'recipe_category',
@@ -35,16 +36,25 @@ $recipes = get_posts($args);
 
 <?php get_header()?>
 
-    <div class="page homepage">
+    <div class="aliza-page homepage">
 
         <section class="homepage__hero">
 
             <div class="hero-content">
-                <h1><?=$main_title?></h1>
+                <h1 class="hero-title"><?=$main_title?></h1>
+                <div class="text-content">
+                    <?= $main_text?>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="<?=get_template_directory_uri()?>/assets/images/banner.png" />
+                <?php if (has_post_thumbnail()) : ?>
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>">
+                <?php else:?>
+                        <img src="<?=get_template_directory_uri()?>/assets/images/banner.png" />
+                <?php endif; ?>
             </div>
+       
+
         </section>
 
         

@@ -19,7 +19,7 @@ $categories = get_terms([
 
 <?php get_header()?>
 
-    <div class="page categories-page">
+    <div class="aliza-page categories-page">
 
         <h1 class="categories-page__title">המתכונים של עליזה</h1>
         <section class="categories-page__wrapper">
