@@ -57,53 +57,64 @@ $recipes = get_posts($args);
 
         </section>
 
-        
-       
-        <section class="homepage__categories">
-            <?php if (!empty($categories)): ?>
-                <?php foreach ($categories as $category):
-                    $taxonomy = 'recipe_category';
-                    if ($category) {
-                        $category_id = $category->term_id;
-                        $title = $category->name;
-                        $image = get_field('image', $taxonomy . "_" . $category_id);
-                        $slug = $category->slug;
-                        $count = $category->count;
-                    }
-                    
-                ?>
-                    <!-- Category card -->  
-                        <a class="category-card" href="<?php echo home_url().'/categories/'. $slug ?>" >
+    
+        <section class="homepage__categories-wrapper">
+            <div class="swiper">
+
+                <div class="swiper-wrapper">
+                    <?php if (!empty($categories)): ?>
+                    <?php foreach ($categories as $category):
+                        $taxonomy = 'recipe_category';
+                        if ($category) {
+                            $category_id = $category->term_id;
+                            $title = $category->name;
+                            $image = get_field('image', $taxonomy . "_" . $category_id);
+                            $slug = $category->slug;
+                            $count = $category->count;
+                            }
+                            
+                            ?>
+                        <!-- Category card -->  
+                        <a class="swiper-slide category-slide" href="<?php echo home_url().'/categories/'. $slug ?>" >
                             <div class="image">
                                 <img src="<?=$image['url']?>" alt=""/>
-                            </div>
-                            <h4 class="title"><?php echo $title ?></h4>
-                        </a>
-                    <!-- /Category card -->
-                <?php endforeach; ?>
-
-            <?php endif; ?> 
-        </section>
-
-
-        <section class="homepage__recipes">
-            <h2 class="title"> מתכונים פופלריים</h2>
-            <div class="recipes-wrapper">
-            <?php if($recipes):?>
-                <?php foreach($recipes as $recipe):?>
-                <a href="<?=get_permalink($recipe->ID)?>" class="recipe-card">
-                   
-                    <?php if (has_post_thumbnail($recipe->ID)): ?>
-                        <div class="recipe-image">
-                         <?php echo get_the_post_thumbnail($recipe->ID, 'medium'); ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <h3 class="recipe-title"><?=$recipe->post_title?></h3>
-            </a>
-                <?php endforeach;?>
-            <?php endif;?>
+                                </div>
+                                <h4 class="title"><?php echo $title ?></h4>
+                                </a>
+                                <!-- /Category card -->
+                                <?php endforeach; ?>
+                                <?php endif; ?> 
+                </div>
             </div>
         </section>
+
+
+        <section class="homepage__recipes-wrapper">
+            <h2 class="title"> מתכונים פופלריים</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php if($recipes):?>
+                        <?php foreach($recipes as $recipe):?>
+                        <a href="<?=get_permalink($recipe->ID)?>" class="swiper-slide recipe-slide">
+                        
+                            <?php if (has_post_thumbnail($recipe->ID)): ?>
+                                <div class="recipe-image">
+                                <?php echo get_the_post_thumbnail($recipe->ID, 'medium'); ?>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <h3 class="recipe-title"><?=$recipe->post_title?></h3>
+                    </a>
+                        <?php endforeach;?>
+                    <?php endif;?>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
     </div>
 <?php get_footer()?>
